@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Programa Lan House</title>
+</head>
+
+<body class="bg-base-200 min-h-screen">
+  <div class="container mx-auto py-8 px-4">
+    <h1 class="text-3xl font-bold text-center mb-8">Programa Lan House</h1>
+
+    <div class="card bg-base-100 shadow-xl max-w-md mx-auto">
+      <div class="card-body">
+        <h2 class="card-title mb-4">Calcular valor a pagar</h2>
+
+        <section>
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text">Valor por hora (R$):</span>
+            </label>
+            <input type="number" id="valorhr" placeholder="Digite o valor por hora" class="input input-bordered" />
+          </div>
+
+          <div class="form-control mb-6">
+            <label class="label">
+              <span class="label-text">Tempo de uso (minutos):</span>
+            </label>
+            <input type="number" id="minutos" placeholder="Digite o tempo em minutos" class="input input-bordered" />
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn-primary">Calcular</button>
+          </div>
+        </section>
+
+        <section>
+          <div id="pagar" class="divider">Valor a pagar</div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="ex05.js"></script>
+</body>
+
+</html>

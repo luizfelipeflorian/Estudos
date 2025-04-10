@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Calculadora de Pagamento</title>
+</head>
+
+<body class="bg-base-200 min-h-screen">
+  <div class="container mx-auto p-4">
+    <div class="card bg-base-100 shadow-xl max-w-md mx-auto">
+      <div class="card-body">
+        <h1 class="card-title text-2xl mb-4 text-center">
+          Calculadora de Pagamento
+        </h1>
+
+        <div>
+          <label class="label">
+            <span class="label-text">Preço do Produto (R$)</span>
+          </label>
+          <input type="number" placeholder="Digite o valor do produto" id="precoproduto" class="input input-bordered" />
+        </div>
+
+        <button class="btn btn-primary mt-4">Calcular</button>
+
+        <section class="mt-6">
+          <div class="divider">Opções de Pagamento</div>
+
+          <div class="flex flex-col gap-4">
+            <div class="bg-base-200 rounded-lg p-3">
+              <label class="label">
+                <span class="label-text font-medium">Valor Original</span>
+              </label>
+              <div type="text" id="original" class="input input-bordered">R$ 0,00</div>
+            </div>
+
+            <section class="bg-success/10 rounded-lg p-3">
+              <label class="label">
+                <span class="label-text font-medium">À Vista (10% de desconto)</span>
+              </label>
+              <div type="text" id="desconto" class="input input-bordered">R$ 0,00</div>
+              <label class="label">
+                <span class="label-text-alt">Economia de <span id="economia">R$ 0,00</span></span>
+              </label>
+            </section>
+
+            <section class="bg-info/10 rounded-lg p-3">
+              <label class="label">
+                <span class="label-text font-medium">Valor da Parcela 3x sem juros</span>
+              </label>
+              <div type="text" id="parcelado" class="input input-bordered">R$ 0,00</div>
+              <label class="label">
+                <span class="label-text-alt">Total Parcelado: <span id="totalparcelado">R$ 0,00</span></span>
+              </label>
+            </section>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="ex02.js"></script>
+</body>
+
+</html>

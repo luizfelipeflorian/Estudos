@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Folha Pagamento</title>
+</head>
+
+<body class="bg-base-200 min-h-screen">
+  <div class="container mx-auto p-4">
+    <div class="card bg-base-100 shadow-xl max-w-md mx-auto my-8">
+      <div class="card-body">
+        <h1 class="card-title text-2xl mb-4">Cálculo de Salário</h1>
+        <section>
+          <div class="form-control w-full mb-4">
+            <label class="label">
+              <span class="label-text">Horas trabalhadas no mês</span>
+            </label>
+            <input type="number" id="horasmes" placeholder="Digite o número de horas" class="input input-bordered w-full" />
+          </div>
+
+          <div class="form-control w-full mb-6">
+            <label class="label">
+              <span class="label-text">Valor por hora (R$)</span>
+            </label>
+            <input type="number" id="valorhora" placeholder="Digite o valor por hora" class="input input-bordered w-full" />
+          </div>
+
+          <button type="button" class="btn btn-primary w-full">
+            Calcular Salário
+          </button>
+
+          <div class="w-full mt-6">
+            <div id="total" class="divider">Salário Total</div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="ex03.js"></script>
+</body>
+
+</html>

@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width", initial-scale=1.0>
+    <meta name="viewport" content="width=device-width" , initial-scale=1.0>
     <title>Hello JavaScript</title>
+    <style>
+        .display {
+            background-color: slateblue;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Hello JavaScript!!</h1>
-    <p>
+    <p> 
         Desenvolvimento Web Dinâmico
     </p>
-    <script src="script.js">
-        
-    </script>
+    <div> 
+        <label>Nome: <!-- Campo para digitar o nome -->
+            <input type="text" name="name" />
+        </label>
+        <button>Mostrar</button> <!-- Botão para exibir o nome -->
+    </div>
+    <div class="display"> <!-- Aqui será exibido o nome -->
+
+    </div>
+    <script src="script.js"></script> <!-- Importando o arquivo script.js -->
 </body>
+
 </html>
