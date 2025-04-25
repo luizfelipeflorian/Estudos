@@ -13,12 +13,19 @@
 <body>
     <div class="container mx-auto h-screen">
         <h1 class="text-2xl mb-3">Lista de compras</h1>
-        <label class="input">
-            <span class="label">Item</span>
-            <input type="text" placeholder="descrição do item" id="item" />
-        </label>
-        <button class="btn btn-primary" id="btnAdicionar">Adicionar</button>
-        <span class="text-indigo-700" id="contador"></span>
+        <div class="flex py-2 gap-2 flex-col">
+            <label class="input">
+                <span class="label">Item</span>
+                <input type="text" placeholder="Descrição do item" id="item" />
+            </label>
+            <div class="flex gap-2">
+                <button class="btn btn-primary text-green-400" id="btnAdicionarF">Adicionar no final</button>
+                <button class="btn btn-primary text-green-400" id="btnAdicionarI">Adicionar no início</button>
+                <button class="btn btn-primary text-red-400" id="btnRemovU">Remover o último</button>
+                <button class="btn btn-primary text-red-400" id="btnRemovP">Remover o primeiro</button>
+            </div>
+        </div>
+        <span class="text-indigo-700 py-6" id="contador"></span>
         <ul class="list shadow-md rounded-box p-4" id="listaCompras">
         </ul>
     </div>
