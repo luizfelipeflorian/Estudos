@@ -16,28 +16,16 @@ if (localStorage.getItem('lista')) {
 
 function adicionarItemInicio() {
     let item = inputItem.value;
-    if (item.trim() === '') { // Verifica se o campo está vazio ou contém apenas espaços
-        alert('Por favor, insira um item!');
-        return;
-    }
-    listaCompras.unshift(item);
-    renderLista();
-    atualizarContador();
-    inputItem.value = ''; // Limpa o campo de entrada após adicionar o item
-    localStorage.setItem('lista', JSON.stringify(listaCompras));
+    if (!validarInput(item)) return; // Chama a função de validação
+    listaCompras.unshift(item); // Adiciona o item no início do array
+    atualizarStorage(); // Atualiza o armazenamento local e renderiza a lista
 }
 
 function adicionarItemFinal() {
     let item = inputItem.value;
-    if (item.trim() === '') { // Verifica se o campo está vazio ou contém apenas espaços
-        alert('Por favor, insira um item!');
-        return;
-    }
-    listaCompras.push(item);
-    renderLista();
-    atualizarContador();
-    inputItem.value = ''; // Limpa o campo de entrada após adicionar o item
-    localStorage.setItem('lista', JSON.stringify(listaCompras));
+    if (!validarInput(item)) return; // Chama a função de validação
+    listaCompras.push(item); // Adiciona o item no final do array
+    atualizarStorage(); // Atualiza o armazenamento local e renderiza a lista
 }
 
 function removerItemPrimeiro() {
@@ -46,9 +34,7 @@ function removerItemPrimeiro() {
         return;
     }
     listaCompras.shift(); // Remove o primeiro item do array
-    renderLista();
-    atualizarContador();
-    localStorage.setItem('lista', JSON.stringify(listaCompras));
+    atualizarStorage(); // Atualiza o armazenamento local e renderiza a lista
 }
 
 function removerItemUltimo() {
@@ -57,9 +43,7 @@ function removerItemUltimo() {
         return;
     }
     listaCompras.pop(); // Remove o último item do array
-    renderLista();
-    atualizarContador();
-    localStorage.setItem('lista', JSON.stringify(listaCompras));
+    atualizarStorage(); // Atualiza o armazenamento local e renderiza a lista
 }
 
 function renderLista() {
@@ -79,6 +63,22 @@ function atualizarContador() {
         contador.textContent = "Lista vazia! Adicione itens.";
     }
 }
+
+function validarInput(item) {
+    if (item.trim() == '') { // Verifica se o campo está vazio ou contém apenas espaços
+        alert('Por favor, insira um item!');
+        return false;
+    }
+    return true; // Retorna verdadeiro se o item for válido
+}
+
+function atualizarStorage() {
+    renderLista();
+    atualizarContador();
+    inputItem.value = ''; // Limpa o campo de entrada após adicionar o item
+    localStorage.setItem('lista', JSON.stringify(listaCompras));
+}
+
 renderLista();
 atualizarContador();
 
