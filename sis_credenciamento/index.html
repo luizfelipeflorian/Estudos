@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Crendencimento</title>
+</head>
+
+<body>
+  <div class="navbar bg-base-100 shadow-sm">
+    <a class="btn btn-ghost text-xl">🎟️ Credenciamento de Evento</a>
+  </div>
+  <main class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold text-left"></h1>
+
+    <!-- Input de nome -->
+    <section class="flex items-center gap-2 p-2">
+      <label class="floating-label">
+        <input type="text" placeholder="Nome do Participante" class="input input-sm w-lg" id="nome-participante" />
+        <span>Participante</span>
+      </label>
+      <button class="btn btn-sm btn-primary" id="btn-check-in">
+        Fazer Check-in
+      </button>
+      <button class="btn btn-sm btn-primary" id="btn-limpar">
+        Limpar Lista
+      </button>
+    </section>
+    <div class="divider"></div>
+    <section>
+      <h2 class="text-md p-2 font-bold">Lista de Participantes</h2>
+      <div class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100 w-lg">
+        <table class="table table-sm" id="tabela-participantes">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th>Participante</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-participantes-body">
+            <!-- row 1 -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
