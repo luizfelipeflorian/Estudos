@@ -1,149 +1,141 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesa de Carteado</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mesa de Carteado</title>
-</head>
-
-<body>
-  <!-- Navbar -->
-  <div class="navbar bg-base-100 shadow-sm">
-    <div class="navbar-start">
-      <a href="/" class="btn btn-ghost text-xl">Desenvolvimento Web Dinâmico</a>
-    </div>
-    <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1">
-        <li><a href="/">Cadastro</a></li>
-        <li>
-          <a href="deck-cards.html" class="active">Mesa de Carteado</a>
-        </li>
-      </ul>
-    </div>
-    <div class="navbar-end">
-      <!-- Menu mobile toggle -->
-      <div class="dropdown lg:hidden">
-        <div tabindex="0" role="button" class="btn btn-ghost">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </div>
-        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a href="/">Cadastro Cliente</a></li>
-          <li><a href="/pages/nova-pagina.html">Nova Página</a></li>
-          <li><a href="/pages/deck-cards.html">Mesa de Carteado</a></li>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-sm">
+      <div class="navbar-start">
+        <a href="/" class="btn btn-ghost text-xl"
+          >Desenvolvimento Web Dinâmico</a
+        >
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li><a href="/" class="active">Cadastro</a></li>
+          <li><a href="/products.html">Lista de Produtos</a></li>
+          <li><a href="/deck-cards.html">Mesa de Carteado</a></li>
         </ul>
       </div>
-    </div>
-  </div>
-
-  <!-- Mesa de Carteado -->
-  <main class="min-h-screen bg-gradient-to-br from-green-800 to-green-900 py-8">
-    <div class="container mx-auto px-4">
-      <!-- Cabeçalho -->
-      <div class="text-center mb-8">
-        <h1 class="text-4xl font-bold text-white mb-4">
-          🃏 Mesa de Carteado
-        </h1>
-        <p class="text-lg text-green-100 max-w-2xl mx-auto">
-          Simulação de uma mesa de cartas usando a API Deck of Cards
-        </p>
+      <div class="navbar-end">
+        <!-- Menu mobile toggle -->
+        <div class="dropdown lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li><a href="/" class="active">Cadastro</a></li>
+            <li><a href="/products.html">Lista de Produtos</a></li>
+            <li><a href="/deck-cards.html">Mesa de Carteado</a></li>
+          </ul>
+        </div>
       </div>
+    </div>
 
-      <!-- Controles do Jogo -->
-      <div class="max-w-6xl mx-auto mb-6">
-        <div class="card bg-base-100/90 backdrop-blur shadow-xl">
-          <div class="card-body">
-            <div class="flex flex-wrap gap-4 justify-center items-center">
-              <button class="btn btn-primary" id="newDeckBtn">
-                🆕 Novo Baralho
-              </button>
-              <button class="btn btn-secondary" id="shuffleBtn" disabled>
-                🔀 Embaralhar
-              </button>
-              <button class="btn btn-accent" id="drawCardBtn" disabled>
-                🃏 Puxar Carta
-              </button>
+    <!-- Mesa de Carteado -->
+    <main
+      class="min-h-screen bg-gradient-to-br from-green-800 to-green-900 py-8"
+    >
+      <div class="container mx-auto px-4">
+        <!-- Cabeçalho -->
+        <div class="text-center mb-8">
+          <h1 class="text-4xl font-bold text-white mb-4">
+            🃏 Mesa de Carteado
+          </h1>
+          <p class="text-lg text-green-100 max-w-2xl mx-auto">
+            Simulação de uma mesa de cartas usando a API Deck of Cards
+          </p>
+        </div>
 
-              <button class="btn btn-error" id="resetBtn" disabled>
-                🔄 Resetar Mesa
-              </button>
-            </div>
-
-            <!-- Status do Baralho -->
-            <div class="stats stats-horizontal shadow mt-4 w-full">
-              <div class="stat">
-                <div class="stat-figure text-primary">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
-                </div>
-                <div class="stat-title">ID do Baralho</div>
-                <div class="stat-value text-sm" id="deckId">-</div>
-                <div class="stat-desc">Identificador único</div>
+        <!-- Controles do Jogo -->
+        <div class="max-w-6xl mx-auto mb-6">
+          <div class="card bg-base-100/80 backdrop-blur shadow-xl">
+            <div class="card-body">
+              <div class="flex flex-wrap gap-4 justify-center items-center">
+                <button class="btn btn-primary" id="newDeckBtn">
+                  Novo Baralho
+                </button>
+                <button class="btn btn-error" id="btnResetarMesa">
+                  Resetar Mesa
+                </button>
               </div>
 
-              <div class="stat">
-                <div class="stat-figure text-secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-                  </svg>
+              <!-- Status do Baralho -->
+              <div class="stats stats-horizontal shadow mt-4 w-full">
+                <div class="stat">
+                  <div class="stat-figure text-primary">
+                    <i data-lucide="layers"></i>
+                  </div>
+                  <div class="stat-title">ID do Baralho</div>
+                  <div class="stat-value text-sm" id="baralhoId">-</div>
+                  <div class="stat-desc">Identificador único</div>
                 </div>
-                <div class="stat-title">Cartas Restantes</div>
-                <div class="stat-value" id="remaining">0</div>
-                <div class="stat-desc">No baralho</div>
-              </div>
 
-              <div class="stat">
-                <div class="stat-figure text-accent">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                <div class="stat">
+                  <div class="stat-figure text-amber-500">
+                    <i data-lucide="coins"></i>
+                  </div>
+                  <div class="stat-title">Pontos</div>
+                  <div class="stat-value" id="pontos">0</div>
+                  <div class="stat-desc">No baralho</div>
                 </div>
-                <div class="stat-title">Status</div>
-                <div class="stat-value text-sm" id="deckStatus">
-                  Sem baralho
+                <div class="stat">
+                  <div class="stat-figure text-secondary"></div>
+                  <div class="stat-title">Cartas Restantes</div>
+                  <div class="stat-value" id="cartasRestantes">0</div>
+                  <div class="stat-desc">No baralho</div>
                 </div>
-                <div class="stat-desc">Estado atual</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Mesa de Jogo -->
-
-      <!-- Área das Cartas Puxadas -->
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold text-white mb-4 text-center">
-          🃏 Cartas na Mesa
-        </h3>
-        <div class="min-h-40 bg-green-700/50 rounded-xl border-2 border-green-600 p-6" id="tableCards">
-          <div class="flex flex-wrap gap-4 justify-center items-center h-full">
-            <div class="text-green-200 text-center opacity-50">
-              <div class="text-4xl mb-2">🎯</div>
-              <p>Cartas aparecerão aqui quando puxadas</p>
+        <!-- Mesa de Jogo -->
+        <h2 class="text-2xl text-center font-bold text-white mb-4">
+          Mesa de Jogo
+        </h2>
+        <section
+          class="max-w-6xl mx-auto h-50 bg-gradient-to-br from-green-600 to-green-700 rounded-md p-4 flex items-center justify-start gap-4"
+        >
+          <div id="mesaBaralho">
+            <div id="baralho" class="stack w-24">
+              <img class="w-24"
+                src="https://deckofcardsapi.com/static/img/back.png">
+              <img class="w-24"
+                src="https://deckofcardsapi.com/static/img/back.png">
+              <img class="w-24"
+                src="https://deckofcardsapi.com/static/img/back.png">
             </div>
           </div>
-        </div>
+          <div
+            id="mesaCartas"
+            class="border border-green-300 p-2 flex-1 h-full"
+          ></div>
+        </section>
       </div>
+    </main>
 
-
-    </div>
-
-
-    </div>
-  </main>
-
-  <script type="module" src="./src/deck-card.js"></script>
-</body>
-
+    <script type="module" src="./src/deck-card.js"></script>
+  </body>
 </html>

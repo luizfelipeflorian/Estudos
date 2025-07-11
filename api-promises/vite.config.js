@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         deckCards: resolve(__dirname, 'deck-cards.html'),
+        productsList: resolve(__dirname, 'products.html'),
       }
     }
   }
