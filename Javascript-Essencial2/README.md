@@ -23,7 +23,7 @@
 
 - src/counter.js
 
-- src/javascript.src
+- src/javascript.svg
 
 ### Crie
 
