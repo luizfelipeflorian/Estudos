@@ -1,17 +1,15 @@
-let filmes = ['Vingadores Ultimato', 'Guerra dos mundos', 'Jurassic Park']
-let numeros = [10, 23, 59, 33, 89]
+import { clientes, produtos } from "./db/dados";
+import './style.css'
 
-filmes.forEach(function(filme){
-    console.log(filme);
+const ulClientes = document.querySelector('#clientes')
+
+let clientesMap = clientes.map((cliente) => {
+
+    let status = cliente.ativo ? "badge badge-soft badge-success" : "badge badge-soft badge-error"; //verifica o status e customisa a class do label para uma etiqueta
+
+    return `<li>${cliente.nome} - ${cliente.email} - <label class="${status}">${cliente.ativo}</label></li>`
 })
 
-let numerosDobrados = numeros.map(function (numero) {
-    return numero*2
+clientesMap.forEach((li) => {
+    ulClientes.innerHTML += li
 })
-console.log(numerosDobrados)
-
-let numerosMaioresQue100 = numerosDobrados.filter(function (numero) {
-    return (numero > 100)
-})
-
-console.log(numerosMaioresQue100)

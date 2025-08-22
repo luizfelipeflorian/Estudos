@@ -1,4 +1,4 @@
-const clientes = [
+export const clientes = [
     { nome: 'Ana Souza', email: 'ana.souza@example.com', ativo: true },
     { nome: 'Bruno Lima', email: 'bruno.lima@example.com', ativo: false },
     { nome: 'Carla Mendes', email: 'carla.mendes@example.com', ativo: true },
@@ -6,7 +6,7 @@ const clientes = [
     { nome: 'Elisa Prado', email: 'elisa.prado@example.com', ativo: false },
 ]
 
-const produtos = [
+export const produtos = [
     { id: 1, descricao: 'Teclado mecânico', precoCusto: 119.99, estoque: 10, icms: 0.18, margem: 0.3 },
     { id: 2, descricao: 'Mouse sem fio', precoCusto: 50.00, estoque: 0, icms: 0.18, margem: 0.4 },
     { id: 3, descricao: 'Monitor LED 24"', precoCusto: 299.00, estoque: 0, icms: 0.18, margem: 0.5 },

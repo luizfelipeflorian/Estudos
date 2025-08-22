@@ -45,3 +45,25 @@ for (let pessoa of pessoas) {
 }
 
 console.log(pessoaLocalizada)
+
+filmes.forEach(function (filme) {
+    console.log(filme);
+})
+
+let numerosDobrados = numeros.map(function (numero) {
+    return numero * 2
+})
+console.log(numerosDobrados)
+
+let numerosMaioresQue100 = numerosDobrados.filter(function (numero) {
+    return (numero > 100)
+})
+
+console.log(numerosMaioresQue100)
+
+//função de flecha
+filmes.forEach((filme) => {
+    console.log(filme)
+})
+
+filmes.forEach(filme => console.log(filme))
