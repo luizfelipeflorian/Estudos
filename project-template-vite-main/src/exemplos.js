@@ -67,3 +67,89 @@ filmes.forEach((filme) => {
 })
 
 filmes.forEach(filme => console.log(filme))
+
+const despesasDomesticas = [
+  {
+    descricao: "Conta de luz",
+    valor: 230.50,
+    categoria: "Energia",
+    data: "2025-08-10",
+    pago: true
+  },
+  {
+    descricao: "Conta de água",
+    valor: 120.75,
+    categoria: "Água",
+    data: "2025-08-12",
+    pago: false
+  },
+  {
+    descricao: "Supermercado",
+    valor: 560.00,
+    categoria: "Alimentação",
+    data: "2025-08-15",
+    pago: true
+  },
+  {
+    descricao: "Internet",
+    valor: 99.90,
+    categoria: "Comunicação",
+    data: "2025-08-18",
+    pago: false
+  }
+];
+
+// usando o reduce para somar os valotes
+let totalDespesas = despesasDomesticas.reduce((ac, despesa) => {
+  return ac + despesa.valor
+}, 0)
+
+console.log(totalDespesas)
+
+// usando o reduce e o filter para um tipo de "somase"
+let totalDespesasNaoPagas = despesasDomesticas.filter((despesa) => {
+  return despesa.pago == false
+}).reduce((ac, despesa) => {
+  return ac + despesa.valor
+}, 0)
+console.log('Despesas Não Pagas:', totalDespesasNaoPagas)
+
+let temperaturasF = [32, 50, 100, 60]
+
+let temperaturasC = temperaturasF.map((grau) => {
+  return (grau - 32) * 5 / 9
+})
+
+console.log(temperaturasC)
+
+//retornando uma cópia do objeto com o spread
+let despesasComDesconto =
+  despesasDomesticas.map((despesa) => {
+    return {
+      ...despesa,
+      totalComDesconto: despesa.valor * 0.95
+    }
+  })
+
+console.log('Despesa com desconto', despesasComDesconto)
+
+// ensinando a usar o spread
+let frutas = ['Maçã', 'Laranja', 'Uva']
+let legumes = ['Beterraba', 'Alface', 'Pepino']
+
+let alimentos = [...frutas, ...legumes]
+
+console.log(alimentos)
+
+// ensinandoa usar o spread com objetos
+let entereco = {
+  rua: 'x',
+  cep: '123456'
+}
+
+let pessoa = {
+  nome: 'Luiz',
+  idade: '20',
+  ...entereco
+}
+console.log(pessoa)
