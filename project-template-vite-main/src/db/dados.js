@@ -16,3 +16,62 @@ export const produtos = [
     { id: 7, descricao: 'Microfone condensador', precoCusto: 200.00, estoque: 4, icms: 0.18, margem: 0.9 },
     { id: 8, descricao: 'Mesa digitalizadora', precoCusto: 350.00, estoque: 1, icms: 0.18, margem: 1.0 }
 ];
+
+// ./src/db/dados.js
+export const contas = [
+  {
+    descricao: "Aluguel",
+    valor: 1200.00,
+    pago: true
+  },
+  {
+    descricao: "Conta de luz",
+    valor: 250.75,
+    pago: false
+  },
+  {
+    descricao: "Internet",
+    valor: 99.90,
+    pago: true
+  },
+  {
+    descricao: "Supermercado",
+    valor: 480.30,
+    pago: false
+  },
+  {
+    descricao: "Plano de saúde",
+    valor: 320.00,
+    pago: true
+  },
+  {
+    descricao: "Gasolina",
+    valor: 350.00,
+    pago: false
+  },
+  {
+    descricao: "Academia",
+    valor: 89.90,
+    pago: true
+  },
+  {
+    descricao: "Streaming (Netflix)",
+    valor: 39.90,
+    pago: true
+  },
+  {
+    descricao: "Manutenção do carro",
+    valor: 780.00,
+    pago: false
+  },
+  {
+    descricao: "Farmácia",
+    valor: 120.45,
+    pago: true
+  },
+  {
+    descricao: "Escola das crianças",
+    valor: 950.00,
+    pago: false
+  }
+];
