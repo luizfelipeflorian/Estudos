@@ -153,3 +153,37 @@ let pessoa = {
   ...entereco
 }
 console.log(pessoa)
+
+//trabalhando com objetos e banco de dados
+import { clientes, produtos } from "./db/dados";
+
+const ulClientes = document.querySelector('#clientes')
+
+let clientesMap = clientes.map((cliente) => {
+
+    let status = cliente.ativo ? "badge badge-soft badge-success" : "badge badge-soft badge-error"; //verifica o status e customisa a class do label para uma etiqueta
+
+    return `<li>${cliente.nome} - ${cliente.email} - <label class="${status}">${cliente.ativo}</label></li>`
+})
+
+clientesMap.forEach((li) => {
+    ulClientes.innerHTML += li
+})
+
+//apenas um corresponde
+let numbers = [1, -2, 10, 8]
+
+let valorMenorQueZero = numbers.some((numero) => {
+    return numero < 0
+})
+
+console.log(valorMenorQueZero)
+
+//todos correspondem
+let nomes = ['Caio', 'Marcos', 'Felipe']
+
+let comMaisdeTresCaracteres = nomes.every((nome) => {
+    return nome.length > 3
+})
+
+console.log(comMaisdeTresCaracteres)
