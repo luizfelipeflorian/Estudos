@@ -1,6 +1,8 @@
 import './style.css'
 import { contas } from "./db/dados";
 
+//https://caiopinheiro.notion.site/
+
 /* 
 1. forEach
 - Exiba no console uma frase para cada conta no formato:`"A conta [descricao] tem o valor de R$[valor]"`.
