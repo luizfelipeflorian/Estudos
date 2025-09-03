@@ -56,3 +56,8 @@ let contasAcimaDe500 = contas.filter((conta)=> {
     return (conta.valor > 500)
 })
 console.log(contasAcimaDe500)
+
+let contasNaoPagasAcimaDe500 = contas.filter((conta)=> {
+    return (conta.valor > 500) && (!conta.pago)
+})
+console.log(contasNaoPagasAcimaDe500)
