@@ -31,7 +31,10 @@ let contasDesc = contas.map((conta) => {
 console.log(contasDesc)
 
 let contasJuro = contas.map((conta) => {
-    return conta.valor * 1.10
+    return {
+        ...conta,
+        valor : conta.valor * 1.10
+    }
 })
 console.log(contasJuro)
 
@@ -95,13 +98,13 @@ console.log(totalNaoPagas)
 let naoPaga = contas.some((numero) => {
     return (!numero.pago)
 })
-let status = naoPaga? 'há Contas pendentes' : 'Contas pagas';
+let status = naoPaga ? 'há Contas pendentes' : 'Contas pagas';
 console.log(status);
 
 let acimaDe1000 = contas.some((numero) => {
     return (numero.valor > 1000)
 })
-let status1000 = acimaDe1000? 'há Contas acima de 1000' : 'Contas abaixo de 1000';
+let status1000 = acimaDe1000 ? 'há Contas acima de 1000' : 'Contas abaixo de 1000';
 console.log(status1000);
 
 /* 
@@ -114,11 +117,11 @@ console.log(status1000);
 let todasPagas = contas.every((numero) => {
     return (numero.pago)
 })
-let pagas = todasPagas? 'Todas as contas foram pagas' : 'Pussui Contas pendentes';
+let pagas = todasPagas ? 'Todas as contas foram pagas' : 'Pussui Contas pendentes';
 console.log(pagas);
 
 let acimaDe50 = contas.every((numero) => {
     return (numero.pago > 50)
 })
-let acima = acimaDe50? 'Todas as contas são acima de R$ 50' : 'Possui contas abaixo de R$ 50';
+let acima = acimaDe50 ? 'Todas as contas são acima de R$ 50' : 'Possui contas abaixo de R$ 50';
 console.log(acima);
