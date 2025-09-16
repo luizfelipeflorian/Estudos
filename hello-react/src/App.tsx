@@ -1,4 +1,5 @@
-import { Titulo } from "./titulo"
+import { Titulo } from "./Titulo"
+import { Button } from "./Botao";
 
 /* CONPONENTE APP */
 function App() {
@@ -6,8 +7,25 @@ function App() {
   return (
     <>
       <div>
-        <Titulo/> {/* Um componente React é uma função javascript que retorna um elemento html e é iniciado com letra maiúscula */}
-        <Titulo/>
+        <Titulo tag='h1' className="text-rose-500">
+          Componentes React
+        </Titulo>
+        <Titulo tag='h2' className="text-blue-500">
+          Componentes React
+        </Titulo>
+        <Titulo tag='h3' className="text-yellow-500">
+          Componentes React
+        </Titulo>
+        <Titulo tag='h2' className="text-orange-500">
+          Componentes React
+        </Titulo>
+
+        <Button variant="primario">
+          Editar
+        </Button>
+        <Button variant='secundario'>
+          Salvar
+        </Button>
       </div>
     </>
   )
