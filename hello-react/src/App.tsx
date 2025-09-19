@@ -1,31 +1,16 @@
-import { Titulo } from "./Titulo"
+/* import { Titulo } from "./Titulo"
 import { Button } from "./Botao";
+ */
+
+import { ProfileCard } from "./perfil";
 
 /* CONPONENTE APP */
 function App() {
 
   return (
     <>
-      <div>
-        <Titulo tag='h1' className="text-rose-500">
-          Componentes React
-        </Titulo>
-        <Titulo tag='h2' className="text-blue-500">
-          Componentes React
-        </Titulo>
-        <Titulo tag='h3' className="text-yellow-500">
-          Componentes React
-        </Titulo>
-        <Titulo tag='h2' className="text-orange-500">
-          Componentes React
-        </Titulo>
-
-        <Button variant="primario">
-          Editar
-        </Button>
-        <Button variant='secundario'>
-          Salvar
-        </Button>
+      <div className="flex justify-center items-center text-center h-full min-h-screen">
+        <ProfileCard name={"Joaozinho"} avatarUrl={'https://randomuser.me/api/portraits/women/79.jpg'} role={"Dev junior"} />
       </div>
     </>
   )

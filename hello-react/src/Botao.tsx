@@ -1,5 +1,5 @@
 type ButtonPops = {
-    variant: string,
+    variant: "primario" | "secundario",
     children: React.ReactNode,
 }
 
