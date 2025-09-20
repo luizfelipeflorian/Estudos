@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div className="flex justify-center items-center text-center h-full min-h-screen">
-        <ProfileCard name={"Joaozinho"} avatarUrl={'https://randomuser.me/api/portraits/women/79.jpg'} role={"Dev junior"} />
+        <ProfileCard name={"Carlinha"} avatarUrl={'https://randomuser.me/api/portraits/women/79.jpg'} role={"Gerente de marketing"} />
       </div>
     </>
   )
