@@ -5,6 +5,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { ListaTarefas } from "./components/lista-tarefas"
 export function App() {
   return (
     <SidebarProvider>
@@ -19,10 +20,8 @@ export function App() {
             />
           </div>
         </header>
-        <main>
-          <h1>
-            Conteúdo AQUI!!!!!!!!!
-          </h1>
+        <main className="p-2">
+          <ListaTarefas/>
         </main>
       </SidebarInset>
     </SidebarProvider>
