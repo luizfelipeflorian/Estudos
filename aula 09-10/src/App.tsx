@@ -1,14 +1,15 @@
 import { AppSidebar } from "./components/app-sidebar"
-import { ListaContas } from "./components/lista-contas"
-/* import { ListaTarefas } from "./components/lista-tarefas" */
+import { Contador } from "./components/contador"
+/* import { ListaContas } from "./components/lista-contas"
+ *//* import { ListaTarefas } from "./components/lista-tarefas" */
 import { Separator } from "./components/ui/separator"
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
 } from "./components/ui/sidebar"
-import { contas } from "./dados"
-
+/* import { contas } from "./dados"
+ */
 export function App() {
   return (
     <SidebarProvider>
@@ -24,8 +25,9 @@ export function App() {
           </div>
         </header>
         <main className="p-2">
-{/*           <ListaTarefas/> */}
-          <ListaContas contas={contas}/> 
+          {/*           <ListaTarefas/> */}
+          {/* <ListaContas contas={contas} /> */}
+          <Contador />
         </main>
       </SidebarInset>
     </SidebarProvider>
