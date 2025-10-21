@@ -1,5 +1,6 @@
 import { AppSidebar } from "./components/app-sidebar"
 import { Contador } from "./components/contador"
+import { ThemeBotao } from "./components/theme-mode"
 /* import { ListaContas } from "./components/lista-contas"
  *//* import { ListaTarefas } from "./components/lista-tarefas" */
 import { Separator } from "./components/ui/separator"
@@ -28,6 +29,7 @@ export function App() {
           {/*           <ListaTarefas/> */}
           {/* <ListaContas contas={contas} /> */}
           <Contador />
+          <ThemeBotao/>
         </main>
       </SidebarInset>
     </SidebarProvider>
