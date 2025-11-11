@@ -13,29 +13,21 @@ import { useState } from "react"
 import { StatusLivro } from "@/lib/generated/prisma/enums"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
+import { salvarLivro } from "@/app/actions/livro-actions"
 
 export default function FormLivro({
     className,
     ...props
 }: React.ComponentProps<"div">) {
-    const [titulo, setTitulo] = useState("")
-    const [autor, setAutor] = useState("")
-    const [status, setStatus] = useState<StatusLivro>("QUERO_LER")
-
-    /*   function cadastrar(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault()
-        console.log(titulo, autor, status) //tenho q tirar isso dps
-      } */
-
     return (
         <div className={cn("flex flex-col gap-6", className)} {...props}>
             <Card className="overflow-hidden p-0">
                 <CardContent>
-                    <form className=" grid p-6 md:grid-cols-2" /* onSubmit={cadastrar} */>
+                    <form action={salvarLivro} className=" grid p-6 md:grid-cols-2">
                         <div className="p-6 md:p-8">
                             <FieldGroup>
                                 <div className="flex flex-col items-center gap-2 text-center">
-                                    <h1 className="text-2xl font-bold">Cadastre um novo item</h1>
+                                    <h1 className="text-2xl font-bold">Cadastre um novo Livro</h1>
                                 </div>
 
                                 <Field>
@@ -43,8 +35,7 @@ export default function FormLivro({
                                     <Input
                                         id="titulo"
                                         type="text"
-                                        value={titulo}
-                                        onChange={(e) => setTitulo(e.target.value)}
+                                        name="titulo"
                                         placeholder="Escreva aqui o título do livro!"
                                         required
                                     />
@@ -52,7 +43,13 @@ export default function FormLivro({
 
                                 <Field>
                                     <FieldLabel htmlFor="autor">Autor</FieldLabel>
-                                    <Input id="autor" type="text" value={autor} onChange={(e) => setAutor(e.target.value)} placeholder="Escreva aqui o nome do autor!" required />
+                                    <Input
+                                        id="autor"
+                                        type="text"
+                                        name="autor"
+                                        placeholder="Escreva aqui o nome do autor!"
+                                        required
+                                    />
                                 </Field>
 
                                 <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card">
@@ -62,8 +59,7 @@ export default function FormLivro({
                                 <Field>
                                     <RadioGroup
                                         className="grid grid-cols-3 gap-4"
-                                        value={status}
-                                        onValueChange={(e) => setStatus(e as StatusLivro)}
+                                        name="status"
                                     >
                                         <div className="flex items-center gap-3">
                                             <RadioGroupItem value="LIDO" id="r1" />
